@@ -67,4 +67,3 @@ printf("Today you have an account of £%d.\n", user.account);
 void saluteUser(){
     printf("\nThank you for choosing Silver Bank today!\n");
 }
-
