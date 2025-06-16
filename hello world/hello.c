@@ -13,6 +13,7 @@ struct User           //*Structure to represent a user
 void greetingMsg();
 void saluteUser();
 void getUserDetail(struct User *u);
+void printUsers(struct User user);
 
 int main(){
 struct User users[MAX_USERS];
@@ -22,10 +23,15 @@ greetingMsg();
 
 printf("How many users do you want to add today? \n");
 scanf("%d", &n);
+
 for(int i = 0; i < n; i++){
 getUserDetail(&users[i]);
 };
 
+printf("\n------User Details------\n");
+for(int i = 0; i < n; i++){
+    printUsers(users[i]);
+    };
 saluteUser();
     return 0;
 }
@@ -39,7 +45,7 @@ void greetingMsg(){
 void getUserDetail(struct User *u){
    printf("Please enter your age: ");
     scanf("%d", &u->age);
-    if(&u->age > 18){
+    if(u->age > 18){
         printf("Please enter your first name: ");
         scanf("%s", u->firstName);
         printf("Please enter your last name: ");
@@ -56,9 +62,9 @@ void getUserDetail(struct User *u){
 void printUsers(struct User user){
 printf("Full name: %s %s\n", user.firstName, user.lastName);
 printf("Email: %s\n", user.email);
-printf("Today you have an account of £%d.", user.account);
+printf("Today you have an account of £%d.\n", user.account);
 }
 void saluteUser(){
-    printf("Thank you for choosing Silver Bank today!");
+    printf("\nThank you for choosing Silver Bank today!\n");
 }
 
