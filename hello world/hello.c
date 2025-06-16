@@ -4,9 +4,9 @@
 #define MAX_USERS 10  //* Maximum number of users
 struct User           //*Structure to represent a user
 {
+    int age;
     char firstName[10];
     char lastName[10];
-    int age;
     char email[25];
     int account;
 };
