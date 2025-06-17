@@ -1,3 +1,10 @@
 {
-  "C_Cpp.errorSquiggles": "enabled"
+  "C_Cpp.errorSquiggles": "enabled",
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "editor.formatOnSave": true
+  },
+  "C_Cpp.clang_format_style": "file",  // use .clang-format file if present
+  "C_Cpp.clang_format_fallbackStyle": "Google" // fallback if no file found
 }
+
