@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 
+#pragma region function prototype
 #define MAX_USERS 10  //* Maximum number of users
 struct User           //*Structure to represent a user
 {
@@ -14,28 +15,45 @@ void greetingMsg();
 void saluteUser();
 void getUserDetail(struct User *u);
 void printUsers(struct User user);
+int optionStartMenu();
+#pragma endregion
 
 int main(){
+
 struct User users[MAX_USERS];
-int n;
+int answer, n;
 
 greetingMsg();
 
-printf("How many users do you want to add today? \n");
-scanf("%d", &n);
+do{
+int answer = optionStartMenu();
+switch (answer)
+{
+case 1:
+    /* code */
+    break;
 
-for(int i = 0; i < n; i++){
-getUserDetail(&users[i]);
-};
+case 2:
 
-printf("\n------User Details------\n");
-for(int i = 0; i < n; i++){
-    printUsers(users[i]);
-    };
+    break;
+}
+
+} while (answer != 0);{}
+
+
+// for(int i = 0; i < n; i++){
+// getUserDetail(&users[i]);
+// };
+
+// printf("\n------User Details------\n");
+// for(int i = 0; i < n; i++){
+//     printUsers(users[i]);
+//     };
 saluteUser();
     return 0;
 }
 
+#pragma region function 
 void greetingMsg(){
     printf("**************<<<<<<<<<<<<<<<>>>>>>>>>>>>>>*****************\n");
     printf("**********          Welcome to Silver Bank!!        *********\n");
@@ -55,8 +73,19 @@ void getUserDetail(struct User *u){
         printf("Please enter the amount you want to deposit today in £: ");
         scanf("%d", &u->account);
     }else{
-        printf("Sorry, you are to young at this time to open an account!\nYou must wait till turn 18 years old!");
+        printf("Sorry, you are to young at this time to open an account!\nYou must wait till turn 18 years old!\n\n\n");
     }
+}
+
+int optionStartMenu(){
+    int n;
+    printf("Please choose one of the following option or press '0' to exit! \n");
+    printf("1.\t🏦Open acount.\n");
+    printf("2.\t💷My account.\n");
+    printf("0.\tExit.🚀\n");
+    printf("Enter your selection: ");
+    scanf("%d", &n);
+    return n;
 }
 
 void printUsers(struct User user){
@@ -67,3 +96,4 @@ printf("Today you have an account of £%d.\n", user.account);
 void saluteUser(){
     printf("\nThank you for choosing Silver Bank today!\n");
 }
+#pragma endregion
