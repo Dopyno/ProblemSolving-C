@@ -1,3 +1,4 @@
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -28,16 +29,18 @@ int main() {
     int answer = optionStartMenu();
     switch (answer) {
       case 1:
-        printf("This is case 1");
+
+        n++;
+        for (int i = 0; i < n; i++) {
+          getUserDetail(&users[i]);
+        }
         break;
 
       case 2:
-        printf("This is case 2");
 
         break;
       case 0:
         saluteUser();
-
         break;
     }
 
@@ -59,35 +62,64 @@ int main() {
 
 #pragma region function
 void greetingMsg() {
-  printf("**************<<<<<<<<<<<<<<<>>>>>>>>>>>>>>*****************\n");
+  printf(
+      "\n\n\n**************<<<<<<<<<<<<<<<>>>>>>>>>>>>>>*****************\n");
   printf("**********          Welcome to Silver Bank!!        *********\n");
   printf("**************<<<<<<<<<<<<<<<>>>>>>>>>>>>>>*****************\n\n\n");
 }
 
 void getUserDetail(struct User *u) {
-  printf("Please enter your age: ");
-  scanf("%d", &u->age);
+  int valid = 0;
+  int positive = 0;
+  do {
+    printf("You must have 18 to open an account! Please enter your age: ");
+    if (scanf("%d", &u->age) != 1 || u->age <= 0) {
+      printf("❌ Invalid input. Please enter a valid age (positive number).\n");
+      while (getchar() != '\n');  // clear invalid input
+    } else {
+      valid = 1;
+    }
+  } while (!valid);
+
   if (u->age > 18) {
+    printf("\n✅ You're eligible to open an account!\n");
+
     printf("Please enter your first name: ");
     scanf("%s", u->firstName);
+
     printf("Please enter your last name: ");
     scanf("%s", u->lastName);
+
     printf("Please enter your email address: ");
     scanf("%s", u->email);
-    printf("Please enter the amount you want to deposit today in £: ");
-    scanf("%d", &u->account);
+
+    while (!positive) {
+      printf("Please enter the amount you want to deposit today in £: ");
+
+      if (scanf("%d", &u->account) != 1 || u->account < 0) {
+        printf("❌ Invalid input. Please enter a positive amount.\n");
+        // while (getchar() != '\n');  // clear input buffer
+      } else {
+        valid = 1;  // valid input
+      }
+    }
+    printf("\n🎉 Account successfully created for %s %s!\n", u->firstName,
+           u->lastName);
+    printf("📧 Email: %s\n", u->email);
+    printf("💰 Initial deposit: £%d\n", u->account);
+
   } else {
     printf(
-        "Sorry, you are to young at this time to open an account!\nYou must "
-        "wait till turn 18 years old!\n\n\n");
-  }
+        "\n🚫 Sorry, you are too young to open an account.\n"
+        "You must be at least 18 years old.\n\n\n");
+  };
 }
 
 int optionStartMenu() {
   int n;
   printf("Please choose one of the following option or press '0' to exit! \n");
-  printf("1.\t🏦Open acount.\n");
-  printf("2.\t💷My account.\n");
+  printf("1.\tOpen acount.🏦\n");
+  printf("2.\tMy account.💷\n");
   printf("0.\tExit.🚀\n");
   printf("Enter your selection: ");
   scanf("%d", &n);
