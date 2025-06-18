@@ -70,7 +70,7 @@ void greetingMsg() {
 
 void getUserDetail(struct User *u) {
   int valid = 0;
-  int positive = 0;
+  int input;
   do {
     printf("You must have 18 to open an account! Please enter your age: ");
     if (scanf("%d", &u->age) != 1 || u->age <= 0) {
@@ -93,16 +93,21 @@ void getUserDetail(struct User *u) {
     printf("Please enter your email address: ");
     scanf("%s", u->email);
 
-    while (!positive) {
-      printf("Please enter the amount you want to deposit today in £: ");
+    do {
+      printf("Please enter a positive deposit amount in £: ");
 
-      if (scanf("%d", &u->account) != 1 || u->account < 0) {
-        printf("❌ Invalid input. Please enter a positive amount.\n");
-        // while (getchar() != '\n');  // clear input buffer
+      if (scanf("%d", &input) != 1 || input <= 0) {
+        printf("❌ Invalid input. Please enter a valid positive number.\n");
+
+        // Clear input buffer to avoid infinite loop if non-numeric entered
+        while (getchar() != '\n');
       } else {
-        valid = 1;  // valid input
+        u->account = input;  // Store valid input in user's account
+        break;               // Exit loop when input is valid
       }
-    }
+
+    } while (1);
+
     printf("\n🎉 Account successfully created for %s %s!\n", u->firstName,
            u->lastName);
     printf("📧 Email: %s\n", u->email);
