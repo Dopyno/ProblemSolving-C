@@ -21,20 +21,20 @@ int optionStartMenu();
 
 int main() {
   struct User users[MAX_USERS];
-  int answer, n;
+  int answer, n = 0;
 
   greetingMsg();
 
   do {
     int answer = optionStartMenu();
     switch (answer) {
-      case 1:
-
-        n++;
-        for (int i = 0; i < n; i++) {
-          getUserDetail(&users[i]);
-        }
-        break;
+      case 1: 
+          n++;
+          for (int i = 0; i < n; i++) {
+            getUserDetail(&users[i]);
+          }
+      // printf("%d", n);
+      break;
 
       case 2:
 
@@ -85,8 +85,8 @@ void getUserDetail(struct User *u) {
     printf("\n✅ You're eligible to open an account!\n\n");
 
     printf("Please enter your first name: ");
-    //fgets(u->firstName, sizeof(u->firstName), stdin);
-    //u->firstName[strlen(u->firstName) - 1] = '\0';
+    // fgets(u->firstName, sizeof(u->firstName), stdin);
+    // u->firstName[strlen(u->firstName) - 1] = '\0';
     scanf("%s", u->firstName);
 
     printf("Please enter your last name: ");
@@ -113,7 +113,7 @@ void getUserDetail(struct User *u) {
     printf("\n🎉 Account successfully created for %s %s!\n", u->firstName,
            u->lastName);
     printf("📧 Email: %s\n", u->email);
-    printf("💰 Initial deposit: £%d\n", u->account);
+    printf("💰 Initial deposit: £%d\n\n", u->account);
 
   } else {
     printf(
