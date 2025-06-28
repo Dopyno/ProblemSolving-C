@@ -33,7 +33,6 @@ int main() {
           for (int i = 0; i < n; i++) {
             getUserDetail(&users[i]);
           }
-      // printf("%d", n);
       break;
 
       case 2:
