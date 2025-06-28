@@ -80,7 +80,7 @@ void getUserDetail(struct User *u) {
     }
   } while (!valid);
 
-  if (u->age > 18) {
+  if (u->age >= 18) {
     printf("\n✅ You're eligible to open an account!\n\n");
 
     printf("Please enter your first name: ");
