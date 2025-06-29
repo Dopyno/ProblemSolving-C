@@ -1,0 +1,18 @@
+1. Number Guessing Game
+Prompt: You pick a secret number. Write a program where the user guesses a number, and the program gives feedback if it's too low, too high, or correct.
+2. Simple Battle Game
+Prompt: Write a program that compares a player's attack damage to a monster's health and tells if the monster is defeated.
+3. Rock-Paper-Scissors
+Prompt: Create a program where the user chooses Rock, Paper, or Scissors, and the result is compared against a fixed choice.
+4. Monster Battle with Choices
+Prompt: Write a program where the user chooses an action (Attack, Defend, or Heal) and the result is printed accordingly.
+5. Locked Door Puzzle
+Prompt: Write a program where the user must guess a password. The program gives hints if the guess is too low or too high.
+6. Choose Your Adventure
+Prompt: Write a program where the user chooses a path (Forest, Castle, or Village), and the result is printed accordingly.
+7. Duel Game
+Prompt: Write a program where the user chooses an attack, the enemy has a fixed attack, and the result is calculated accordingly.
+8. Simple Betting Game
+Prompt: Write a program where the user bets an amount and guesses a number. The win or loss is calculated accordingly.
+9. Simple Racing Game
+Prompt: Write a program where the user chooses a car, and the program determines its race result.
