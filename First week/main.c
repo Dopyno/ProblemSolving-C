@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void calcAge(int a);
+//void calcAge(int a);
 
 int main()
 {
@@ -69,7 +69,7 @@ int main()
 
     char name[100];
 
-    printf("Enter your name: \t");
+    printf("Enter your name: \n");
     fgets(name, sizeof(name), stdin);
 
     printf("%s", name);

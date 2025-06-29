@@ -1,5 +1,6 @@
 #include <ctype.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #pragma region function prototype
@@ -20,6 +21,7 @@ int optionStartMenu();
 #pragma endregion
 
 int main() {
+  system("clear");
   struct User users[MAX_USERS];
   int answer, n = 0;
 
@@ -28,12 +30,12 @@ int main() {
   do {
     int answer = optionStartMenu();
     switch (answer) {
-      case 1: 
-          n++;
-          for (int i = 0; i < n; i++) {
-            getUserDetail(&users[i]);
-          }
-      break;
+      case 1:
+        n++;
+        for (int i = 0; i < n; i++) {
+          getUserDetail(&users[i]);
+        }
+        break;
 
       case 2:
 
@@ -71,9 +73,11 @@ void getUserDetail(struct User *u) {
   int valid = 0;
   int input;
   do {
-    printf("You must have 18 to open an account! Please enter your age: ");
+    printf("\n\nYou must have 18 to open an account! \nPlease enter your age: ");
     if (scanf("%d", &u->age) != 1 || u->age <= 0) {
-      printf("❌ Invalid input. Please enter a valid age (positive number).\n");
+      printf(
+          "❌❌❌ Invalid input. Please enter a valid age (positive "
+          "number).\n");
       while (getchar() != '\n');  // clear invalid input
     } else {
       valid = 1;
@@ -98,7 +102,8 @@ void getUserDetail(struct User *u) {
       printf("Please enter a positive deposit amount in £: ");
 
       if (scanf("%d", &input) != 1 || input <= 0) {
-        printf("❌ Invalid input. Please enter a valid positive number.\n");
+        printf(
+            "\n❌❌❌ Invalid input. Please enter a valid positive number.\n");
 
         // Clear input buffer to avoid infinite loop if non-numeric entered
         while (getchar() != '\n');
@@ -124,9 +129,9 @@ void getUserDetail(struct User *u) {
 int optionStartMenu() {
   int n;
   printf("Please choose one of the following option or press '0' to exit! \n");
-  printf("1.\tOpen acount.🏦\n");
-  printf("2.\tMy account.💷\n");
-  printf("0.\tExit.🚀\n");
+  printf("1. Open acount.🏦\n");
+  printf("2. My account.💷\n");
+  printf("0. Exit.🚀\n");
   printf("Enter your selection: ");
   scanf("%d", &n);
   return n;
@@ -137,5 +142,5 @@ void printUsers(struct User user) {
   printf("Email: %s\n", user.email);
   printf("Today you have an account of £%d.\n", user.account);
 }
-void saluteUser() { printf("\nThank you for choosing Silver Bank today!\n"); }
+void saluteUser() { printf("\nThank you for choosing Silver Bank today!\n\n"); }
 #pragma endregion
