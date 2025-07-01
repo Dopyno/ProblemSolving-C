@@ -1,29 +1,26 @@
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
+  char sign;
+  float num1, num2;
 
+  printf("Type your expresion: \n");
+  scanf("%f%c%f", &num1, &sign, &num2);
 
-  char letter = "\0";
-
-  printf("teacher input A, B, C, D, F: \n");
-  scanf("%s", &letter);
-
-  switch (tolower(letter)) {
-    case 'a':
-      printf("your grade is %c - perfect", letter);
+  switch (sign) {
+    case '+':
+      printf("%.2f", num1 + num2);
       break;
-      case 'b':
-      printf("your grade is %c - still perfect", letter);
-      
+    case '-':
+      printf("%.2f", num1 - num2);
       break;
-      case 'c':
-      printf("your grade is %c - perfect", letter);
-      
+    case '/':
+      printf("%.2f", num1 / num2);
       break;
-
-    case 0:
-      printf("Thank you for visiting us!");
+    case '*':
+      printf("%.2f", num1 * num2);
       break;
   }
 
