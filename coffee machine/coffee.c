@@ -12,13 +12,13 @@ void start();
 void showMenu();
 void askExtras();
 void makingCoffee(int selection);
-void printTotal();
 void addToHistory(const char *drink);
 void printSummary();
 void printTotal();
 
-float total = 0.0, americano = 3.80, espresso = 1.95, latte = 4.40,
-      cappuccino = 4.40, hotChocolate = 3.90, tea = 1.95;
+float total = 0.0;
+const float americano = 3.80, espresso = 1.95, latte = 4.40, cappuccino = 4.40,
+            hotChocolate = 3.90, tea = 1.95;
 int choice;
 char repeat;
 
@@ -28,14 +28,22 @@ int main() {
   do {
     system("clear");
     showMenu();
+
     printf("Please enter you selection: ");
-    scanf("%d", &choice);
+    scanf("%d", &choice);  // Ask the user for a selection.
+
     makingCoffee(choice);
-    // printTotal();
+    if (choice == 0) {
+      break;
+    }
+
     printf("\nWould you like another coffee? (y/n): ");
-    scanf(" %c", &repeat);
+    scanf(" %c", &repeat);  // Ask the user for another drink.
+
   } while (repeat == 'y' || repeat == 'Y');
+
   printTotal();
+
   return 0;
 }
 
@@ -78,7 +86,6 @@ void showMenu() {
   printf("0. Exit\n");
   printf("========================================\n");
 }
-
 
 void makingCoffee(int selection) {
   switch (selection) {
@@ -129,6 +136,10 @@ void makingCoffee(int selection) {
       printf("🫖 Making your Tea...\n");
       addToHistory("Tea ----------- £1.95");
       sleep(2);
+      break;
+    case 0:
+      printf("Exiting the coffee machine...\n");
+      sleep(3);
       break;
     default:
       printf("\n❌Invalid selection, Please choose from 1-6\n");
