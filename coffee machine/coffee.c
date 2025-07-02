@@ -15,6 +15,7 @@ void makingCoffee(int selection);
 void addToHistory(const char *drink);
 void printSummary();
 void printTotal();
+void clearScreen();
 
 float total = 0.0;
 const float americano = 3.80, espresso = 1.95, latte = 4.40, cappuccino = 4.40,
@@ -23,10 +24,10 @@ int choice;
 char repeat;
 
 int main() {
-  system("clear");
+  clearScreen();
   start();
   do {
-    system("clear");
+    clearScreen();
     showMenu();
 
     printf("Please enter you selection: ");
@@ -161,4 +162,11 @@ void askExtras() {
   if (milk == 'y' || milk == 'Y') {
     printf("🥛 Adding milk...\n");
   }
+}
+void clearScreen() {
+#ifdef _WIN32
+  system("cls");
+#else
+  system("clear");
+#endif
 }
