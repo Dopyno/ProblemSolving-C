@@ -38,6 +38,7 @@ int main() {
   printTotal();
   return 0;
 }
+
 void start() {
   printf("\nWelcome, this is the best 'C' coffee ever!!!\n");
   printf("\nStarting coffee machine...\n");
@@ -58,6 +59,12 @@ void printSummary() {
     }
   }
 }
+void addToHistory(const char *drink) {
+  if (orderCount < MAX_ORDERS) {
+    strcpy(orderHistory[orderCount], drink);
+    orderCount++;
+  }
+}
 
 void showMenu() {
   printf("\n==============Coffee Menu===============\n");
@@ -71,12 +78,7 @@ void showMenu() {
   printf("========================================\n");
 }
 
-void addToHistory(const char *drink) {
-  if (orderCount < MAX_ORDERS) {
-    strcpy(orderHistory[orderCount], drink);
-    orderCount++;
-  }
-}
+
 void makingCoffee(int selection) {
   switch (selection) {
     case 1:
