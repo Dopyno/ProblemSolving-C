@@ -45,10 +45,11 @@ void start() {
   sleep(3);
 }
 void printTotal() {
-  printf("\n============= Order Summary =============\n");
+  printf("\n============= Order Summary ===============\n");
   printSummary();
-  printf("*Total to pay: £%.2f\n", total);
+  printf("\n*Total to pay: £%.2f\n", total);
   printf("===========================================\n");
+  printf("\n👋 Thank you for using C Coffee Machine. Have a great day!\n");
 }
 void printSummary() {
   if (orderCount == 0) {
