@@ -1,11 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
+
+#define MAX_ORDERS 20
+
+char orderHistory[MAX_ORDERS][50];
+int orderCount = 0;
 
 void start();
 void showMenu();
 void askExtras();
-int makingCoffee(int selection);
+void makingCoffee(int selection);
+void printTotal();
+void addToHistory(const char *drink);
+void printSummary();
+void printTotal();
 
 float total = 0.0, americano = 3.80, espresso = 1.95, latte = 4.40,
       cappuccino = 4.40, hotChocolate = 3.90, tea = 1.95;
@@ -16,20 +26,37 @@ int main() {
   system("clear");
   start();
   do {
+    system("clear");
     showMenu();
     printf("Please enter you selection: ");
     scanf("%d", &choice);
     makingCoffee(choice);
+    // printTotal();
     printf("\nWould you like another coffee? (y/n): ");
     scanf(" %c", &repeat);
   } while (repeat == 'y' || repeat == 'Y');
-
+  printTotal();
   return 0;
 }
 void start() {
   printf("\nWelcome, this is the best 'C' coffee ever!!!\n");
   printf("\nStarting coffee machine...\n");
   sleep(3);
+}
+void printTotal() {
+  printf("\n============= Order Summary =============\n");
+  printSummary();
+  printf("*Total to pay: £%.2f\n", total);
+  printf("===========================================\n");
+}
+void printSummary() {
+  if (orderCount == 0) {
+    printf("No orders placed.\n");
+  } else {
+    for (int i = 0; i < orderCount; i++) {
+      printf("%d. %s\n", i + 1, orderHistory[i]);
+    }
+  }
 }
 
 void showMenu() {
@@ -42,51 +69,66 @@ void showMenu() {
   printf("6. Tea ----------- £1.95\n");
   printf("0. Exit\n");
   printf("========================================\n");
-  printf("Total to pay: £%.2f\n", total);
-  printf("========================================\n");
 }
-int makingCoffee(int selection) {
+
+void addToHistory(const char *drink) {
+  if (orderCount < MAX_ORDERS) {
+    strcpy(orderHistory[orderCount], drink);
+    orderCount++;
+  }
+}
+void makingCoffee(int selection) {
   switch (selection) {
     case 1:
+      total += americano;
       printf("You chose Americano.\n");
       askExtras();
       printf("☕ Making your Americano...\n");
+      addToHistory("Americano ----- £3.80");
       sleep(2);
-      total += americano;
       break;
     case 2:
+      total += espresso;
       printf("You chose Espresso.\n");
       askExtras();
       printf("☕ Making your Espresso...\n");
-      total += espresso;
+      addToHistory("Espresso ------ £1.95");
+      sleep(2);
       break;
     case 3:
+      total += latte;
       printf("You chose Latte.\n");
       askExtras();
       printf("☕️ Making your Latte...\n");
-      total += latte;
+      addToHistory("Latte --------- £4.40");
+      sleep(2);
       break;
     case 4:
+      total += cappuccino;
       printf("You chose Cappuccino.\n");
       askExtras();
       printf("☕️ Making your Cappuccino...\n");
-      total += cappuccino;
+      addToHistory("Cappuccino ---- £4.40");
+      sleep(2);
       break;
     case 5:
+      total += hotChocolate;
       printf("You chose Hot Chocolate.\n");
       askExtras();
       printf("☕️ Making your Hot Chocolate...\n");
-      total += hotChocolate;
+      addToHistory("Hot Chocolate - £3.90");
+      sleep(2);
       break;
     case 6:
+      total += tea;
       printf("You chose Tea.\n");
       askExtras();
       printf("🫖 Making your Tea...\n");
-      total += tea;
+      addToHistory("Tea ----------- £1.95");
+      sleep(2);
       break;
-    // default:
-    //   printf("Invalid selection, Please make a selection from 1-6");
-    //   break;
+    default:
+      printf("\n❌Invalid selection, Please choose from 1-6\n");
   }
 }
 
