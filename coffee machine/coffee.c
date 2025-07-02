@@ -20,7 +20,9 @@ int main() {
     printf("Please enter you selection: ");
     scanf("%d", &choice);
     makingCoffee(choice);
-  } while (choice != 0);
+    printf("\nWould you like another coffee? (y/n): ");
+    scanf(" %c", &repeat);
+  } while (repeat == 'y' || repeat == 'Y');
 
   return 0;
 }
@@ -31,7 +33,6 @@ void start() {
 }
 
 void showMenu() {
-  system("clear");
   printf("\n==============Coffee Menu===============\n");
   printf("1. Americano ----- £3.80\n");
   printf("2. Espresso ------ £1.95\n");
@@ -50,6 +51,7 @@ int makingCoffee(int selection) {
       printf("You chose Americano.\n");
       askExtras();
       printf("☕ Making your Americano...\n");
+      sleep(2);
       total += americano;
       break;
     case 2:
@@ -82,14 +84,25 @@ int makingCoffee(int selection) {
       printf("🫖 Making your Tea...\n");
       total += tea;
       break;
-    default:
-      printf("Invalid selection, Please make a selection from 1-6");
-      break;
+    // default:
+    //   printf("Invalid selection, Please make a selection from 1-6");
+    //   break;
   }
 }
 
 void askExtras() {
   char milk, sugar;
 
-  printf("");
+  printf("Would you like sugar? (y/n): ");
+  scanf(" %c", &sugar);
+
+  printf("Would you like milk? (y/n): ");
+  scanf(" %c", &milk);
+
+  if (sugar == 'y' || sugar == 'Y') {
+    printf("🍬 Adding sugar...\n");
+  }
+  if (milk == 'y' || milk == 'Y') {
+    printf("🥛 Adding milk...\n");
+  }
 }
