@@ -22,6 +22,9 @@ int main() {
     case '*':
       printf("%.2f", num1 * num2);
       break;
+    default:
+      printf("❌Invalid operation!!!\n");
+      break;
   }
 
   return 0;
