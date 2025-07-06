@@ -16,3 +16,88 @@ Prompt: Write a program where the user chooses an attack, the enemy has a fixed 
 Prompt: Write a program where the user bets an amount and guesses a number. The win or loss is calculated accordingly.
 9. Simple Racing Game
 Prompt: Write a program where the user chooses a car, and the program determines its race result.
+
+
+Create a program that:​
+
+
+Asks the user to enter a number 1-5.
+If the user enters a number 1 the program repeats and continues with the menu again, using a while.
+Each other number apart from 1 prints a unique message to the user related to a computer game, using a switch.
+Displays "Invalid choice" for other inputs apart from 1-5.
+
+Number Guessing Game
+Scenario for Students:
+You’ve been hired to create a mini game for a kids' learning app. The game should randomly pick a secret number between 1 and 10 and ask the player to guess what it is. The player gets exactly 3 tries.
+After each guess:
+
+If the guess is correct, the game congratulates the player and ends.
+
+If the guess is too high or too low, the game gives a hint and moves to the next guess.
+
+If the player fails all 3 tries, the game should reveal the correct number and say "Game Over".
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
+int main() {
+int secret, guess;
+
+
+srand(time(NULL));
+secret = rand() % 10 + 1;
+
+
+printf("Welcome to the Number Guessing Game!\n");
+printf("I'm thinking of a number between 1 and 10.\n");
+printf("You have 3 tries to guess it.\n");
+
+
+// Try 1
+printf("\nTry 1 - Enter your guess: ");
+scanf("%d", &guess);
+if (guess == secret) {
+printf("You guessed it! The number was %d.\n", secret);
+} else {
+if (guess < secret)
+printf("Too low!\n");
+else
+printf("Too high!\n");
+
+
+// Try 2
+printf("\nTry 2 - Enter your guess: ");
+scanf("%d", &guess);
+if (guess == secret) {
+printf("You guessed it! The number was %d.\n", secret);
+} else {
+if (guess < secret)
+printf("Too low!\n");
+else
+printf("Too high!\n");
+
+
+// Try 3
+printf("\nTry 3 - Enter your guess: ");
+scanf("%d", &guess);
+if (guess == secret) {
+printf("You guessed it! The number was %d.\n", secret);
+} else {
+if (guess < secret)
+printf("Too low!\n");
+else
+printf("Too high!\n");
+
+
+printf("\nYou're out of tries. The number was %d.\n", secret);
+}
+}
+}
+
+
+return 0;
+}
