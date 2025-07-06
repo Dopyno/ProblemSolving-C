@@ -19,21 +19,22 @@ int main(void) {
       scanf("%d", &userNumber);
 
       if (userNumber > randomNumber)
-        printf("❌Sorry, the number is too high");
+        printf("❌Sorry, the number is too high⬆️\n");
       else if (userNumber < randomNumber)
-        printf("❌Sorry, the number is too low");
+        printf("❌Sorry, the number is too low⬇️\n");
       else
-        printf("Correct, you are the superstar!");
+        printf("Correct, you are the superstar!🎉\n");
     }
 
     printf("\nDo you want to play again? (Y / N)\n");
     scanf(" %c", &answer);
+
   } while (answer == 'y' || answer == 'Y');
 
   return 0;
 }
 
 void gameInfo() {
-  printf("\n       ***  Welcome  ***\n");
-  printf("*** Let's play Number Guessing Game! ***\n");
+  printf("\n         ***  Welcome  ***\n");
+  printf("\n*** Let's play Number Guessing Game! ***\n");
 }
