@@ -10,127 +10,133 @@ struct Questions {
   char questionOption[4][100];
   char correctOption;
 };
-struct Questions quiz[MAX_QUESTIONS] = {
-    {"Q1: What is the correct syntax to output \" Hello, World \" in C?",
-     {"A. echo(\" Hello, World \");", "B.printf(\"Hello, World\");",
-      "C.cout << \"Hello, World\";", "D.print(\"Hello, World\") "},
-     'B'},
-    {"Q2. Which header file is required for printf()?",
-     {"A. stdlib.h", "B. conio.h", "C. stdio.h", "D. string.h"},
-     'C'},
-    {"Q3. How do you declare an integer variable in C?",
-     {"A. int num;", "B. num int;", "C. integer num;", "D. num = int;"},
-     'A'},
-    {"Q4. What is the correct operator for comparison in C?",
-     {"A. =", "B. ==", "C. !=", "D. =>"},
-     'B'},
-
-    {"Q5. Which data type is used to store a single character?",
-     {"A. string", "B. char", "C. int", "D. float"},
-     'B'},
-
-    {"Q6. What is the default return type of `main()` in C?",
-     {"A. void", "B. int", "C. char", "D. float"},
-     'B'},
-
-    {"Q7. Which of the following is a loop structure in C?",
-     {"A. repeat-until", "B. foreach", "C. while", "D. loop"},
-     'C'},
-
-    {"Q8. What is the purpose of `#include <stdio.h>`?",
-     {"A. To define variables", "B. To use standard input/output functions",
-      "C. To perform math operations", "D. To include custom headers"},
-     'B'},
-
-    {"Q9. What will `5 / 2` evaluate to in C?",
-     {"A. 2.5", "B. 3", "C. 2", "D. Error"},
-     'C'},
-
-    {"Q10. Which symbol is used to denote a comment in C?",
-     {"A. //", "B. <!-- -->", "C. ##", "D. **"},
-     'A'}};
-
-struct Questions mediumQuestions[MAX_QUESTIONS] = {
-    {"Q1. Who discovered gravity?",
-     {"A. Albert Einstein", "B. Isaac Newton", "C. Galileo", "D. Nikola Tesla"},
-     'B'},
-
-    {"Q2. What is the largest ocean on Earth?",
-     {"A. Atlantic", "B. Indian", "C. Arctic", "D. Pacific"},
-     'D'},
-
-    {"Q3. Which element has the chemical symbol 'O'?",
-     {"A. Gold", "B. Oxygen", "C. Osmium", "D. Opal"},
-     'B'},
-
-    {"Q4. How many bones are in the adult human body?",
-     {"A. 206", "B. 210", "C. 220", "D. 198"},
+struct Questions level1Questions[MAX_QUESTIONS] = {
+    {"Q1. How do you declare an integer variable in C?",
+     {"A. int x;", "B. integer x;", "C. num x;", "D. var x;"},
      'A'},
 
-    {"Q5. Which country hosted the 2016 Summer Olympics?",
-     {"A. China", "B. Brazil", "C. UK", "D. Russia"},
+    {"Q2. Which symbol ends a statement in C?",
+     {"A. :", "B. ;", "C. .", "D. !"},
      'B'},
 
-    {"Q6. Who invented the lightbulb?",
-     {"A. Alexander Graham Bell", "B. Thomas Edison", "C. Nikola Tesla",
-      "D. James Watt"},
-     'B'},
-
-    {"Q7. What is the square root of 64?",
-     {"A. 6", "B. 7", "C. 8", "D. 9"},
+    {"Q3. Which function is used to display output?",
+     {"A. scanf()", "B. echo()", "C. printf()", "D. input()"},
      'C'},
 
-    {"Q8. Which continent is the Sahara Desert located in?",
-     {"A. Asia", "B. North America", "C. Africa", "D. Australia"},
+    {"Q4. Which data type holds a single character?",
+     {"A. int", "B. float", "C. char", "D. string"},
      'C'},
 
-    {"Q9. What is the freezing point of water in Celsius?",
-     {"A. 0°C", "B. 32°C", "C. -1°C", "D. 100°C"},
+    {"Q5. Which header file is required for `printf()`?",
+     {"A. stdio.h", "B. string.h", "C. math.h", "D. stdlib.h"},
      'A'},
 
-    {"Q10. What is the main language spoken in Brazil?",
-     {"A. Spanish", "B. Portuguese", "C. French", "D. English"},
+    {"Q6. What is the correct format specifier for integers?",
+     {"A. %c", "B. %f", "C. %d", "D. %s"},
+     'C'},
+
+    {"Q7. How do you assign value 10 to variable x?",
+     {"A. x := 10;", "B. x = 10;", "C. x == 10;", "D. assign x 10;"},
+     'B'},
+
+    {"Q8. Which of these is a valid variable name?",
+     {"A. 2value", "B. float", "C. _value", "D. int"},
+     'C'},
+
+    {"Q9. What is the result of `5 + 3 * 2`?",
+     {"A. 16", "B. 11", "C. 13", "D. 10"},
+     'B'},
+
+    {"Q10. What is the default return type of main() in C?",
+     {"A. void", "B. int", "C. char", "D. string"},
      'B'}};
 
-struct Questions hardQuestions[MAX_QUESTIONS] = {
-    {"Q1. What is the smallest prime number?",
-     {"A. 0", "B. 1", "C. 2", "D. 3"},
+
+struct Questions level2Questions[MAX_QUESTIONS] = {
+    {"Q1. What does the following statement do?\nif (a == b)",
+     {"A. Compares if a is equal to b", "B. Assigns b to a",
+      "C. Checks if a is not equal to b", "D. Adds a and b"},
+     'A'},
+
+    {"Q2. Which of these is the correct 'not equal' operator in C?",
+     {"A. !=", "B. <>", "C. ~=", "D. =!"},
+     'A'},
+
+    {"Q3. Which operator represents logical AND in C?",
+     {"A. &", "B. &&", "C. |", "D. ||"},
+     'B'},
+
+    {"Q4. What will this condition evaluate to: (5 > 2 && 3 < 4)?",
+     {"A. false", "B. error", "C. true", "D. undefined"},
      'C'},
 
-    {"Q2. What is the currency of South Korea?",
-     {"A. Yen", "B. Won", "C. Ringgit", "D. Yuan"},
-     'B'},
+    {"Q5. What keyword is used to run code when the `if` condition is false?",
+     {"A. else", "B. while", "C. switch", "D. break"},
+     'A'},
 
-    {"Q3. What gas do plants absorb from the atmosphere?",
-     {"A. Oxygen", "B. Hydrogen", "C. Nitrogen", "D. Carbon Dioxide"},
-     'D'},
+    {"Q6. Which of these is the OR logical operator?",
+     {"A. ||", "B. &&", "C. |", "D. OR"},
+     'A'},
 
-    {"Q4. Who developed the theory of relativity?",
-     {"A. Newton", "B. Tesla", "C. Galileo", "D. Einstein"},
-     'D'},
+    {"Q7. What will be printed?\nint x = 10;\nif (x > 5) printf(\"Hi\");",
+     {"A. Hi", "B. Nothing", "C. Error", "D. x"},
+     'A'},
 
-    {"Q5. What is the largest internal organ in the human body?",
-     {"A. Heart", "B. Liver", "C. Lungs", "D. Brain"},
-     'B'},
-
-    {"Q6. What is the hexadecimal equivalent of the decimal number 15?",
-     {"A. D", "B. F", "C. E", "D. C"},
-     'B'},
-
-    {"Q7. What is the chemical formula for table salt?",
-     {"A. H2O", "B. CO2", "C. NaCl", "D. KCl"},
+    {"Q8. Which block runs only when the condition is false?",
+     {"A. if", "B. switch", "C. else", "D. break"},
      'C'},
 
-    {"Q8. Who painted The Starry Night?",
-     {"A. da Vinci", "B. Van Gogh", "C. Picasso", "D. Monet"},
-     'B'},
+    {"Q9. Which operator inverts a condition (logical NOT)?",
+     {"A. !", "B. &&", "C. ||", "D. ~"},
+     'A'},
 
-    {"Q9. Which year did World War II end?",
-     {"A. 1943", "B. 1944", "C. 1945", "D. 1946"},
+    {"Q10. What is the result of (3 == 3 || 4 == 5)?",
+     {"A. true", "B. false", "C. error", "D. 4"},
+     'A'}};
+
+struct Questions loopQuestions[MAX_QUESTIONS] = {
+    {"Q1. What does an `if` statement do?",
+     {"A. Repeats code", "B. Declares a loop", "C. Makes a decision",
+      "D. Prints output"},
      'C'},
 
-    {"Q10. Which is the longest river in the world?",
-     {"A. Amazon", "B. Yangtze", "C. Nile", "D. Mississippi"},
+    {"Q2. Which of the following is a loop in C?",
+     {"A. repeat", "B. foreach", "C. for", "D. loop"},
+     'C'},
+
+    {"Q3. What is the output of: `for(int i=0;i<3;i++) printf(\"%d\", i);`?",
+     {"A. 123", "B. 012", "C. 0123", "D. 1234"},
+     'B'},
+
+    {"Q4. Which loop checks the condition after executing the block once?",
+     {"A. for", "B. while", "C. do-while", "D. if"},
+     'C'},
+
+    {"Q5. What is the output of: `int i = 1; while(i <= 3){ printf(\"%d\", i); "
+     "i++; }`?",
+     {"A. 123", "B. 0123", "C. 1234", "D. 012"},
+     'A'},
+
+    {"Q6. How many times will this run? `for(int i = 0; i < 5; i++)`",
+     {"A. 4", "B. 5", "C. 6", "D. Infinite"},
+     'B'},
+
+    {"Q7. What is the use of `break` inside a loop?",
+     {"A. Skips iteration", "B. Exits loop", "C. Repeats loop",
+      "D. Ends program"},
+     'B'},
+
+    {"Q8. What does `continue` do in a loop?",
+     {"A. Stops the loop", "B. Skips to next iteration", "C. Ends program",
+      "D. Restarts program"},
+     'B'},
+
+    {"Q9. Which logical operator is used for AND?",
+     {"A. ||", "B. &&", "C. &", "D. !"},
+     'B'},
+
+    {"Q10. Which of these loops is guaranteed to execute at least once?",
+     {"A. for", "B. while", "C. do-while", "D. foreach"},
      'C'}};
 
 void gameInfo();
@@ -149,13 +155,13 @@ int main() {
     scanf("%d", &choice);
     switch (choice) {
       case 1:
-        startGame(quiz);
+        startGame(level1Questions);
         break;
       case 2:
-        startGame(mediumQuestions);
+        startGame(level2Questions);
         break;
       case 3:
-        startGame(hardQuestions);
+        startGame(loopQuestions);
         break;
       case 0:
         break;
@@ -195,9 +201,10 @@ void startGame(struct Questions quiz[]) {
 }
 
 void level() {
-  printf("\n 1 - 🟢 Easy - Programming with C ");
-  printf("\n 2 - 🟡 Medium - General Questions ");
-  printf("\n 3 - 🔴 Hard - General Questions");
+  printf("\n  Programming with C ");
+  printf("\n 1 - 🟢 Easy - 🐣 Level 1: Basics of C Programming");
+  printf("\n 2 - 🟡 Medium - ༖ Level 2: Conditions & Logical Operators ");
+  printf("\n 3 - 🔴 Hard - 🔁 Loops & Control Structures");
   printf("\n 0 - Exit \n");
   printf("\n Let's choose the level of difficulty: ");
 }
