@@ -176,7 +176,7 @@ int main() {
 
 void gameInfo() {
   printf("\n      ***  Welcome  ***");
-  printf("\n*** Let's play Quiz Game! ***\n");
+  printf("\n*** Let's play Quiz Game and help you to learn C! ***\n");
 }
 
 void startGame(struct Questions quiz[]) {
