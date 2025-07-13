@@ -54,12 +54,19 @@ void gameInfo();
 void clearScreen();
 void startGame(struct Questions quiz[]);
 int score = 0;
+char repeat;
 
 int main() {
-  char answer;
-  clearScreen();
-  gameInfo();
-  startGame(quiz);
+  do {
+    char answer;
+    clearScreen();
+    gameInfo();
+    startGame(quiz);
+
+    printf("\nDo you want to play again? (y/n): ");
+    scanf(" %c", &repeat);  // Ask the user for another drink.
+
+  } while (toupper(repeat) == 'Y');
 
   return 0;
 }
