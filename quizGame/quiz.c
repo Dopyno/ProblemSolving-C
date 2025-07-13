@@ -53,54 +53,76 @@ struct Questions quiz[MAX_QUESTIONS] = {
 void gameInfo();
 void clearScreen();
 void startGame(struct Questions quiz[]);
-int score = 0;
-char repeat;
+void level();
+int choice, score = 0;
+char repeat, answer;
 
 int main() {
-  do {
-    char answer;
-    clearScreen();
-    gameInfo();
-    startGame(quiz);
+  gameInfo();
 
-    printf("\nDo you want to play again? (y/n): ");
-    scanf(" %c", &repeat);  // Ask the user for another drink.
+  do {
+    level();
+    scanf("%d", &choice);
+    switch (choice) {
+      case 1:
+        startGame(quiz);
+        break;
+      case 2:
+
+        break;
+      case 3:
+
+        break;
+
+      case 0:
+        break;
+
+        printf("\nDo you want to play again? (Y/N): ");
+        scanf(" %c", &repeat);  // Ask the user for another drink.
+    }
 
   } while (toupper(repeat) == 'Y');
 
-  return 0;
+    return 0;
 }
-
-void gameInfo() {
-  printf("\n      ***  Welcome  ***");
-  printf("\n*** Let's play Quiz Game! ***\n");
-}
-
-void startGame(struct Questions quiz[]) {
-  char answer;
-
-  for (int i = 0; i < MAX_QUESTIONS; i++) {
-    printf("\nQuestions nr: %d\n\n", i + 1);
-    printf("%s\n", quiz[i].questionText);
-    for (int j = 0; j < 4; j++) {
-      printf("%s\n", quiz[i].questionOption[j]);
-    }
-    printf("\nEnter your answer (A/B/C/D): ");
-    scanf(" %c", &answer);
-    if (toupper(answer) == quiz[i].correctOption) {
-      printf("✅Correct answer!\n");
-      score++;
-    } else {
-      printf("❌Sorry wrong answer!\n");
-    }
+  void gameInfo() {
+    printf("\n      ***  Welcome  ***");
+    printf("\n*** Let's play Quiz Game! ***\n");
   }
-  printf("\nYour total score is: %d\n", score);
-}
 
-void clearScreen() {
+  void startGame(struct Questions quiz[]) {
+    char answer;
+
+    for (int i = 0; i < MAX_QUESTIONS; i++) {
+      printf("\nQuestions nr: %d\n\n", i + 1);
+      printf("%s\n", quiz[i].questionText);
+      for (int j = 0; j < 4; j++) {
+        printf("%s\n", quiz[i].questionOption[j]);
+      }
+      printf("\nEnter your answer (A/B/C/D): ");
+      scanf(" %c", &answer);
+      if (toupper(answer) == quiz[i].correctOption) {
+        printf("✅Correct answer!\n");
+        score++;
+      } else {
+        printf("❌Sorry wrong answer!\n");
+      }
+    }
+    printf("\nYour total score is: %d\n", score);
+  }
+
+  void level() {
+    printf("\n 1 - 🟢 Easy Programming with C ");
+    printf("\n 2 - 🟡 Medium (1 - 50) ");
+    printf("\n 3 - 🔴 Hard (1 - 100) ");
+    printf("\n 0 - Exit \n");
+    printf("\n Let's choose the level of difficulty: ");
+  }
+
+  void clearScreen() {
 #ifdef _WIN32
-  system("cls");
+    system("cls");
 #else
-  system("clear");
+    system("clear");
 #endif
-}
+  }
