@@ -1,14 +1,11 @@
 #include <stdio.h>
 
 int main() {
+  int a, b;
 
-  printf("Please enter the number of rows for the triangle: ");
-  int num = 0;
-  scanf("%d", &num);
-
-  for (int i = 1; i <= num; i++) {
-    for (int j = 1; j <= i; j++) {
-      printf("%c", '#');
+  for (int i = 1; i <= 6; i++) {
+    for (int j = 1; j <= 6; j++) {
+      printf("%d, %d\n", i, j);
     }
     printf("\n");
   }
