@@ -101,3 +101,12 @@ printf("\nYou're out of tries. The number was %d.\n", secret);
 
 return 0;
 }
+
+
+i) What is the difference between for and while loops in C?
+ii) Explain the difference between = and == in an if condition.
+iii) What does printf("%d", 10 > 5 && 5 < 3); output and why?
+iv) Why should if (scanf(...) == 1) sometimes be used when getting user input?
+v) Can you nest a for loop inside a while loop?  Give an example piece of simple code?
+vi) What is the purpose of break and continue in loops?
+vii) What is the difference between pre-test (while) and post-test (do...while) loops
