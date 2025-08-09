@@ -198,6 +198,33 @@ void startGame(struct Questions quiz[]) {
     }
   }
   printf("\nYour total score is: %d\n", score);
+  if(score > 7){
+    printf("            ,----------------.\n");
+    printf("           _.--._      ( well done! )\n");
+    printf("        ,'        `.    `-,--------------'\n");
+    printf("       /   __) __`  \\ _.-'\n");
+    printf("      (   (`-`(-')   )\n");
+    printf("      /)  \\   _  /  (\n");
+    printf("     /'    )-._.' .  \\ ___\n");
+    printf("    (  ,--.,    `.)___(___)\n");
+    printf("     )(   /-.,--'\\   _ \\/`\n");
+    printf("    '/ .'/        \\ (  Uu\")\\\n");
+    printf("      / /          \\ `/,-'  )\n");
+    printf("     ( ^      ,    ,^ )`._.'\n");
+    printf("      ( `.   Y   .'  )\n");
+    printf("       \\  `. )\\.'   / )\n");
+    printf("       )`._.'=='._.' (\n");
+    printf("      /               )   Ojo/VK/FS/ejm\n");
+    printf("     (                .\"-.\n");
+    printf("    /(`    -)        /    \\\n");
+    printf("   (  \\`-.__    -'_.'      `\n");
+    printf("   |  \\`-.__.--\"v\"          |\n");
+    printf("   `.'      \\   |,          ,\n");
+    printf("    /        `._/           :\n");
+    printf("   /           |           '\n");
+    printf("  /           /|          /\n");
+    printf("             / |         /\n");
+  }
 }
 
 void level() {
