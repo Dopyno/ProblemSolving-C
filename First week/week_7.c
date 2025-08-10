@@ -50,37 +50,104 @@ strcat() - concatenate
 strcmp() - compare 2 strings
 */
 
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
-    int
-    main() {
-  char str1[50] = "Hello";
-  char str2[50] = "world";
-  char copy[50];
-  char concat[100];
+//     int
+//     main() {
+//   char str1[50] = "Hello";
+//   char str2[50] = "world";
+//   char copy[50];
+//   char concat[100];
 
-  // Strlen
-  printf("Length of string is: %lu\n", strlen(str1));
+//   // Strlen
+//   printf("Length of string is: %lu\n", strlen(str1));
 
-  // Strcpy
-  strcpy(copy, str1);
-  printf("After strcpy, copy = %s\n", copy);
+//   // Strcpy
+//   strcpy(copy, str1);
+//   printf("After strcpy, copy = %s\n", copy);
 
-  // Strcat
-  strcpy(concat, str1);
-  strcat(concat, " ");   // append a space
-  strcat(concat, str2);  // append WORLD
-  printf("After strcat, concat = %s\n", concat);
+//   // Strcat
+//   strcpy(concat, str1);
+//   strcat(concat, " ");   // append a space
+//   strcat(concat, str2);  // append WORLD
+//   printf("After strcat, concat = %s\n", concat);
 
-  // Str compare
-  if (strcmp(str1, str2) == 0) {
-    printf("str1 and str2 are equal\n");
-  } else if (strcmp(str1, str2) < 0) {
-    printf("str1 is less than str2\n");
-  } else {
-    printf("str1 is greater than str2\n");
-  }
+//   // Str compare
+//   if (strcmp(str1, str2) == 0) {
+//     printf("str1 and str2 are equal\n");
+//   } else if (strcmp(str1, str2) < 0) {
+//     printf("str1 is less than str2\n");
+//   } else {
+//     printf("str1 is greater than str2\n");
+//   }
 
-  return 0;
-}
+//   return 0;
+// }
+
+// Task : Write a C program that takes a
+//        string(from the user) as input and prints its length,
+//        excluding the null terminator(\0).
+// #include <stdio.h>
+// #include <string.h>
+
+//        int main() {
+
+//         char source[] = "Hello, World!";
+
+//         char dest[100];
+
+//         strcpy(dest, source);
+
+//         printf("%s\n", source);
+//         printf("%s", dest);
+
+//     return 0;
+// }
+
+
+//  Task 3 Join "Hello" and ", World!" with
+//     strcat() and print the result
+//         .
+
+//     Task 4 Join "apple" and "banana" with strcat()
+//         .Compare with strcmp() and print : equal(1),
+//     before(2),
+//     or after(3)
+//         .
+
+//     Task 5 Swap "Hello" and "World" using a temp variable.Show before and after.
+
+//     TEMPLATE :
+// #include <stdio.h>
+// #include <string.h>
+
+//     int main() {
+
+//         char name1[] = "Hello";
+//         char name2[] = ", World!";
+//         char concat[100];
+//         strcat(concat, name1);
+//         strcat(concat, name2);
+//         printf("After the concatenation: %s", concat);
+//   return 0;
+// }
+
+// #include <stdio.h>
+// #include <string.h>
+
+// int main() {
+//   char name1[] = "apple";
+//   char name2[] = "banana";
+//   char concat[100];
+
+//   if (strcmp(name1, name2) == 0){
+//     printf("Equal (1)");
+//   }
+
+//   strcat(concat, name1);
+//   strcat(concat, " ");
+//   strcat(concat, name2);
+//   printf("After the concatenation: %s", concat);
+//   return 0;
+// }

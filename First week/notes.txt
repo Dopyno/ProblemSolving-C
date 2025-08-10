@@ -1,0 +1,94 @@
+QAHE Webex381
+qa.com
+1:24 PM
+Problem 1: Name Badge Printing System
+
+
+#include <stdio.h>
+#include <string.h>
+
+
+int main() {
+char fullName[50]; // Allocate enough space for the name
+
+
+// Get user input
+printf("Enter your full name: ");
+fgets(fullName, sizeof(fullName), stdin);
+
+
+// Remove newline character if present
+size_t length = strlen(fullName);
+if (length > 0 && fullName[length - 1] == '\n') {
+fullName[length - 1] = '\0'; // Replace newline with null terminator
+}
+
+
+// Display the name correctly
+printf("Name Badge: %s\n", fullName);
+
+
+return 0;
+}
+
+Problem 2: Password Verification System
+
+
+#include <stdio.h>
+#include <string.h>
+
+
+int main() {
+char storedPassword[] = "Secure123"; // Preset stored password
+char userPassword[50]; // Array to store user input
+
+
+// Prompt user for password
+printf("Enter your password: ");
+fgets(userPassword, sizeof(userPassword), stdin);
+
+
+// Remove newline character if present
+size_t length = strlen(userPassword);
+if (length > 0 && userPassword[length - 1] == '\n') {
+userPassword[length - 1] = '\0'; // Replace newline with null terminator
+}
+
+
+// Compare passwords using strcmp()
+if (strcmp(userPassword, storedPassword) == 0) {
+printf("Login successful!\n");
+} else {
+printf("Incorrect password. Access denied.\n");
+}
+
+
+return 0;
+}
+
+Problem 3: Text Message Buffer Overflow
+
+
+#include <stdio.h>
+#include <string.h>
+
+
+int main() {
+char message[50]; // Array to store the message
+
+
+// Prompt user for input
+printf("Enter your SMS message (max 49 characters): ");
+scanf("%49s", message); // Reads input safely, ensuring it doesn't exceed the limit
+
+
+// Ensure the message is null-terminated
+message[49] = '\0';
+
+
+// Display the stored message
+printf("Your message: %s\n", message);
+
+
+return 0;
+}
