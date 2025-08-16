@@ -136,18 +136,18 @@ strcmp() - compare 2 strings
 // #include <stdio.h>
 // #include <string.h>
 
-// int main() {
-//   char name1[] = "apple";
-//   char name2[] = "banana";
-//   char concat[100];
+int main() {
+  char name1[] = "apple";
+  char name2[] = "banana";
+  char concat[100];
 
-//   if (strcmp(name1, name2) == 0){
-//     printf("Equal (1)");
-//   }
+  if (strcmp(name1, name2) == 0){
+    printf("Equal (1)");
+  }
 
-//   strcat(concat, name1);
-//   strcat(concat, " ");
-//   strcat(concat, name2);
-//   printf("After the concatenation: %s", concat);
-//   return 0;
-// }
+  strcat(concat, name1);
+  strcat(concat, " ");
+  strcat(concat, name2);
+  printf("After the concatenation: %s", concat);
+  return 0;
+}
