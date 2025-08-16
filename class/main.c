@@ -1,9 +1,13 @@
 #include <stdio.h>
 
-int main(){
-    int a, b, c;
+int main() {
+  char name[] = "Hello world!";
 
-    printf("%d, %d, %d", a, b, c);
+  int i = 0;
 
-    return 0;
+  while (name[i] != '\0'){
+    printf("%c", name[i]);
+    i++;
+  }
+  return 0;
 }
