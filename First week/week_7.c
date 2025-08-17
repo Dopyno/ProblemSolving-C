@@ -42,7 +42,6 @@
 //   return 0;
 // }
 
-
 /*
 strlen() - length of string
 strcpy() - copy string
@@ -105,7 +104,6 @@ strcmp() - compare 2 strings
 //     return 0;
 // }
 
-
 //  Task 3 Join "Hello" and ", World!" with
 //     strcat() and print the result
 //         .
@@ -116,7 +114,8 @@ strcmp() - compare 2 strings
 //     or after(3)
 //         .
 
-//     Task 5 Swap "Hello" and "World" using a temp variable.Show before and after.
+//     Task 5 Swap "Hello" and "World" using a temp variable.Show before and
+//     after.
 
 //     TEMPLATE :
 // #include <stdio.h>
@@ -136,18 +135,76 @@ strcmp() - compare 2 strings
 // #include <stdio.h>
 // #include <string.h>
 
-int main() {
-  char name1[] = "apple";
-  char name2[] = "banana";
-  char concat[100];
+// int main() {
+//   char name1[] = "apple";
+//   char name2[] = "banana";
+//   char concat[100];
 
-  if (strcmp(name1, name2) == 0){
-    printf("Equal (1)");
+//   if (strcmp(name1, name2) == 0){
+//     printf("Equal (1)");
+//   }
+
+//   strcat(concat, name1);
+//   strcat(concat, " ");
+//   strcat(concat, name2);
+//   printf("After the concatenation: %s", concat);
+//   return 0;
+// }
+
+#include <stdio.h>
+#include <string.h>
+
+void printTheStart(){
+  printf("***Welcome to C calculator!***\n");
+  printf("------------------------------\n");
+  printf("Please type your expresion: \n");
+}
+
+void add(int num1, int num2) {
+  int total = num1 + num2;
+  printf("Total: %d\n", total);
+}
+void subtract(int num1, int num2) {
+  int total = num1 - num2;
+  printf("Total: %d\n", total);
+}
+void multiply(int num1, int num2) {
+  int total = num1 * num2;
+  printf("Total: %d\n", total);
+}
+void divide(int num1, int num2) {
+  int total = num1 / num2;
+  printf("Total: %d\n", total);
+}
+
+void calculator(int num1, char operation, int num2) {
+  switch (operation) {
+    case '+':
+      add(num1, num2);
+      break;
+    case '-':
+      subtract(num1, num2);
+      break;
+    case '*':
+      multiply(num1, num2);
+      break;
+    case '/':
+      divide(num1, num2);
+      break;
+    default:
+    printf("Thank you for using the calculator!");
+      break;
   }
+}
 
-  strcat(concat, name1);
-  strcat(concat, " ");
-  strcat(concat, name2);
-  printf("After the concatenation: %s", concat);
+int main() {
+  int num1 = 0, num2 = 0;
+  char operation = ' ';
+  printTheStart();
+
+  scanf("%d %c %d", &num1, &operation, &num2);
+
+  calculator(num1, operation, num2);
+
   return 0;
 }
