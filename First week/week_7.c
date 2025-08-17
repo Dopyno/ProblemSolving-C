@@ -154,7 +154,27 @@ strcmp() - compare 2 strings
 #include <stdio.h>
 #include <string.h>
 
-void printTheStart(){
+void printTheStart();
+void add(int num1, int num2);
+void subtract(int num1, int num2);
+void multiply(int num1, int num2);
+void divide(int num1, int num2);
+void calculator(int num1, char operation, int num2);
+
+int main() {
+  int num1 = 0, num2 = 0;
+  char operation = ' ';
+  
+  printTheStart();
+
+  scanf("%d %c %d", &num1, &operation, &num2);
+
+  calculator(num1, operation, num2);
+
+  return 0;
+}
+
+void printTheStart() {
   printf("***Welcome to C calculator!***\n");
   printf("------------------------------\n");
   printf("Please type your expresion: \n");
@@ -192,19 +212,7 @@ void calculator(int num1, char operation, int num2) {
       divide(num1, num2);
       break;
     default:
-    printf("Thank you for using the calculator!");
+      printf("Thank you for using the calculator!");
       break;
   }
-}
-
-int main() {
-  int num1 = 0, num2 = 0;
-  char operation = ' ';
-  printTheStart();
-
-  scanf("%d %c %d", &num1, &operation, &num2);
-
-  calculator(num1, operation, num2);
-
-  return 0;
 }
