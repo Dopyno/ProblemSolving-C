@@ -155,7 +155,7 @@ strcmp() - compare 2 strings
 #include <string.h>
 
 void printTheStart();
-void add(int num1, int num2);
+int add(int num1, int num2);
 void subtract(int num1, int num2);
 void multiply(int num1, int num2);
 void divide(int num1, int num2);
@@ -180,9 +180,10 @@ void printTheStart() {
   printf("Please type your expresion: \n");
 }
 
-void add(int num1, int num2) {
+int add(int num1, int num2) {
   int total = num1 + num2;
-  printf("Total: %d\n", total);
+  // printf("Total: %d\n", total);
+  return total;
 }
 void subtract(int num1, int num2) {
   int total = num1 - num2;
@@ -200,7 +201,9 @@ void divide(int num1, int num2) {
 void calculator(int num1, char operation, int num2) {
   switch (operation) {
     case '+':
-      add(num1, num2);
+    int rez = 0;
+      rez = add(num1, num2);
+      printf("The new total is: %d", rez);
       break;
     case '-':
       subtract(num1, num2);
