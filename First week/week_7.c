@@ -154,68 +154,109 @@ strcmp() - compare 2 strings
 #include <stdio.h>
 #include <string.h>
 
-void printTheStart();
-int add(int num1, int num2);
-void subtract(int num1, int num2);
-void multiply(int num1, int num2);
-void divide(int num1, int num2);
-void calculator(int num1, char operation, int num2);
+// void printTheStart();
+// int add(int num1, int num2);
+// void subtract(int num1, int num2);
+// void multiply(int num1, int num2);
+// void divide(int num1, int num2);
+// void calculator(int num1, char operation, int num2);
+
+// int main() {
+//   int num1 = 0, num2 = 0;
+//   char operation = ' ';
+
+//   printTheStart();
+
+//   scanf("%d %c %d", &num1, &operation, &num2);
+
+//   calculator(num1, operation, num2);
+
+//   return 0;
+// }
+
+// void printTheStart() {
+//   printf("***Welcome to C calculator!***\n");
+//   printf("------------------------------\n");
+//   printf("Please type your expresion: \n");
+// }
+
+// int add(int num1, int num2) {
+//   int total = num1 + num2;
+//   // printf("Total: %d\n", total);
+//   return total;
+// }
+// void subtract(int num1, int num2) {
+//   int total = num1 - num2;
+//   printf("Total: %d\n", total);
+// }
+// void multiply(int num1, int num2) {
+//   int total = num1 * num2;
+//   printf("Total: %d\n", total);
+// }
+// void divide(int num1, int num2) {
+//   int total = num1 / num2;
+//   printf("Total: %d\n", total);
+// }
+
+// void calculator(int num1, char operation, int num2) {
+//   switch (operation) {
+//     case '+':
+//     int rez = 0;
+//       rez = add(num1, num2);
+//       printf("The new total is: %d", rez);
+//       break;
+//     case '-':
+//       subtract(num1, num2);
+//       break;
+//     case '*':
+//       multiply(num1, num2);
+//       break;
+//     case '/':
+//       divide(num1, num2);
+//       break;
+//     default:
+//       printf("Thank you for using the calculator!");
+//       break;
+//   }
+// }
+
+// void printFibonacci(){
+//   int n1 = 0, n2 = 1, next, i, terms = 10;
+//   for ( i = 0; i < terms; i++)
+//   {
+//     next = n1 + n2;
+//     n1 = n2;
+//     n2 = next;
+//     printf("%d\n", next);
+//   }
+
+// }
+
+// int main(){
+//   printFibonacci();
+//   return 0;
+// }
+void calculateTemperature() {
+  float celsius, fahrenheit;
+  printf("Enter the temperature in Celsius: ");
+  scanf("%f", &celsius);
+
+  fahrenheit = (celsius * 9 / 5) + 32;
+  printf("The temperature in Fahrenheit is: %.2f", fahrenheit);
+}
+
+void calculateFactorial() {
+  int num, factorial = 1;
+  printf("Please enter a number to be calculated: ");
+  scanf("%d", &num);
+  for (int i = 1; i <= num; i++) {
+    factorial *= i;
+  }
+  printf("The factorial for number %d is: %d\n", num, factorial);
+}
 
 int main() {
-  int num1 = 0, num2 = 0;
-  char operation = ' ';
-  
-  printTheStart();
-
-  scanf("%d %c %d", &num1, &operation, &num2);
-
-  calculator(num1, operation, num2);
-
+  // calculateFactorial();
+  calculateTemperature();
   return 0;
-}
-
-void printTheStart() {
-  printf("***Welcome to C calculator!***\n");
-  printf("------------------------------\n");
-  printf("Please type your expresion: \n");
-}
-
-int add(int num1, int num2) {
-  int total = num1 + num2;
-  // printf("Total: %d\n", total);
-  return total;
-}
-void subtract(int num1, int num2) {
-  int total = num1 - num2;
-  printf("Total: %d\n", total);
-}
-void multiply(int num1, int num2) {
-  int total = num1 * num2;
-  printf("Total: %d\n", total);
-}
-void divide(int num1, int num2) {
-  int total = num1 / num2;
-  printf("Total: %d\n", total);
-}
-
-void calculator(int num1, char operation, int num2) {
-  switch (operation) {
-    case '+':
-    int rez = 0;
-      rez = add(num1, num2);
-      printf("The new total is: %d", rez);
-      break;
-    case '-':
-      subtract(num1, num2);
-      break;
-    case '*':
-      multiply(num1, num2);
-      break;
-    case '/':
-      divide(num1, num2);
-      break;
-    default:
-      printf("Thank you for using the calculator!");
-      break;
-  }
 }
