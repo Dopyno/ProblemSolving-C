@@ -5,13 +5,17 @@
 //     printf("%d\n", x);
 // }
 
-void greetUser(char name[]){
-    printf("Welcome %s", name);
-}
+void displayInfo(char name[], int age, float height);
 
-int main(){
-greetUser("Mohamed");
-    return 0;
+int main() {
+  displayInfo("Mihai", 30, 1.80);
+  displayInfo("Jose", 29, 1.81);
+  return 0;
+}
+void displayInfo(char name[], int age, float height) {
+  printf("Your name is: %s\n", name);
+  printf("Your age is: %d\n", age);
+  printf("Your height is: %.2f\n\n", height);
 }
 
 // #include <stdio.h>
@@ -56,3 +60,16 @@ greetUser("Mohamed");
 //     }
 //   }
 // }
+
+// SCENARIO
+
+// At each ride entrance (and with parental consent), guests (that how they call
+// customers at Disney) must be checked for like their name, age and height for
+// safety and security
+
+// TASK
+// Write a function called checkGuest() that:
+
+// i) Accepts 3 parameters: name, age, and height - you decide the datatypes.
+// ii) Prints out their details in a clear, friendly format
+// iii) Call the function twice with different guest data (randomly).
