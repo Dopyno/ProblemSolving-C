@@ -1,8 +1,16 @@
 #include <stdio.h>
 
+// void myFunction(){
+//     int x = 5;
+//     printf("%d\n", x);
+// }
+
+void greetUser(char name[]){
+    printf("Welcome %s", name);
+}
+
 int main(){
-
-
+greetUser("Mohamed");
     return 0;
 }
 
