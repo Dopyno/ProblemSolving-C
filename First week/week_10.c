@@ -44,3 +44,29 @@ int main(){
     
     return 0;
 }
+
+// #include <stdio.h>
+// #include <string.h>
+
+// int myFunction(char str[]) {
+//   int i = 0, j = strlen(str) - 1;
+//   while (i < j) {
+//     if (str[i] != str[j]) return 0;
+//     i++;
+//     j--;
+//   }
+//   return 1;
+// }
+
+// int main() {
+//   char word[50];
+//   printf("Enter a word: ");
+//   scanf("%s", word);
+
+//   if (myFunction(word))
+//     printf("%s is a ?????\n", word);
+//   else
+//     printf("%s is not a ??????\n", word);
+
+//   return 0;
+// }
