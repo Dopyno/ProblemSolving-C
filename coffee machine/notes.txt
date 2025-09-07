@@ -1,0 +1,19 @@
+a) What problem-solving skills have you developed during this module?
+
+During this module, I have developed stronger logical thinking and debugging skills. Writing programs in C forced me to break down large problems into smaller, manageable steps. I also learned how to approach errors systematically, such as interpreting compiler warnings and runtime errors, instead of guessing where the problem might be.
+
+b) Give examples of thought and practical processes?
+
+One example of a thought process was planning my code with pseudocode before I started typing. This helped me to structure my ideas logically. A practical process was testing my program step by step, using simple input values first to check whether my logic worked, and then increasing complexity.
+
+c) Relate one example to your assignment?
+
+For my coffee machine program, I first thought about the user interaction flow (menu, input, order summary). I then broke this down into smaller functions such as showMenu(), makingCoffee(), and printTotal(). When I encountered issues like storing order history, I applied problem-solving skills by researching string arrays and implementing a history-saving function.
+
+d) How did you balance multiple assignments and deadlines in this module?
+
+I balanced my work by prioritising tasks based on deadlines and difficulty. For example, I worked on coding assignments in shorter, more frequent sessions so I could test and debug regularly, instead of leaving everything to the last moment. I also used a to-do list to keep track of progress across different modules.
+
+e) What would you do differently next time?
+
+Next time, I would start my assignments earlier and spend more time refining and testing my code. I would also try to collaborate more with peers by discussing challenges, since explaining problems to others often helps clarify my own understanding.
