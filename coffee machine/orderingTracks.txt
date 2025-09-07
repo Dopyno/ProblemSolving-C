@@ -1,0 +1,7 @@
+============= Order Summary ===============
+1. Cappuccino ---- £4.40
+
+*Total to pay: £4.40
+===========================================
+
+👋 Thank you for using C Coffee Machine. Have a great day!

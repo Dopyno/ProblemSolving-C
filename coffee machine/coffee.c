@@ -48,8 +48,8 @@ int main() {
   printTotal();
 
   printf("\nWould you like to view the saved order file? (Y / N)");
-  scanf(" %c", %repeat);
-  if(repeat == 'y' || repeat == 'Y'){
+  scanf(" %c", &repeat);
+  if (repeat == 'y' || repeat == 'Y') {
     viewFile();
   }
 
@@ -181,8 +181,10 @@ void clearScreen() {
 }
 void saveToFile() {
   FILE *file = fopen("orderingTracks.txt", "w");
-  if (file == NULL) printf("❌Warning: Error opening the file! ❌");
-  return 0;
+  if (file == NULL) {
+    printf("❌Warning: Error opening the file! ❌");
+    return;
+  }
 
   fprintf(file, "============= Order Summary ===============\n");
   for (int i = 0; i < orderCount; i++) {
