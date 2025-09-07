@@ -16,6 +16,8 @@ void addToHistory(const char *drink);
 void printSummary();
 void printTotal();
 void clearScreen();
+void viewFile();
+void saveToFile();
 
 float total = 0.0;
 const float americano = 3.80, espresso = 1.95, latte = 4.40, cappuccino = 4.40,
@@ -45,6 +47,12 @@ int main() {
 
   printTotal();
 
+  printf("\nWould you like to view the saved order file? (Y / N)");
+  scanf(" %c", %repeat);
+  if(repeat == 'y' || repeat == 'Y'){
+    viewFile();
+  }
+
   return 0;
 }
 
@@ -67,6 +75,7 @@ void printSummary() {
     for (int i = 0; i < orderCount; i++) {
       printf("%d. %s\n", i + 1, orderHistory[i]);
     }
+    saveToFile();
   }
 }
 void addToHistory(const char *drink) {
@@ -169,4 +178,37 @@ void clearScreen() {
 #else
   system("clear");
 #endif
+}
+void saveToFile() {
+  FILE *file = fopen("orderingTracks.txt", "w");
+  if (file == NULL) printf("❌Warning: Error opening the file! ❌");
+  return 0;
+
+  fprintf(file, "============= Order Summary ===============\n");
+  for (int i = 0; i < orderCount; i++) {
+    fprintf(file, "%d. %s\n", i + 1, orderHistory[i]);
+  }
+  fprintf(file, "\n*Total to pay: £%.2f\n", total);
+  fprintf(file, "===========================================\n");
+  fprintf(file,
+          "\n👋 Thank you for using C Coffee Machine. Have a great day!\n");
+
+  fclose(file);
+  printf("\n✅ Order saved to orderingTracks.txt\n");
+}
+
+void viewFile() {
+  FILE *file = fopen("orderingTracks.txt", "r");
+  if (file == NULL) {
+    printf("🔴 Warning: No saved orders found!🔴\n");
+    return;
+  }
+
+  char line[256];
+  printf("\n📄 Contents of orderingTracks.txt:\n\n");
+  while (fgets(line, sizeof(line), file)) {
+    printf("%s", line);
+  }
+
+  fclose(file);
 }
